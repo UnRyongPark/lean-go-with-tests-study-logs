@@ -2,13 +2,15 @@ package main
 
 import "fmt"
 
-const english = "English"
-const spanish = "Spanish"
-const franch = "Franch"
+const (
+	english = "English"
+	spanish = "Spanish"
+	franch  = "Franch"
 
-const englishPrefix = "Hello"
-const spanishPrefix = "Hola"
-const franchPrefix = "Bonjour"
+	englishPrefix = "Hello"
+	spanishPrefix = "Hola"
+	franchPrefix  = "Bonjour"
+)
 
 func Hello(name string, language string) string {
 	if name == "" {
@@ -18,13 +20,17 @@ func Hello(name string, language string) string {
 		language = "english"
 	}
 
+	return fmt.Sprintf("%s, %s", greetingPefix(language), name)
+}
+
+func greetingPefix(language string) (prefix string) {
 	switch language {
 	case spanish:
-		return fmt.Sprintf("%s, %s", spanishPrefix, name)
+		return spanishPrefix
 	case franch:
-		return fmt.Sprintf("%s, %s", franchPrefix, name)
+		return franchPrefix
 	default:
-		return fmt.Sprintf("%s, %s", englishPrefix, name)
+		return englishPrefix
 	}
 }
 
