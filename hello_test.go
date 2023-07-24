@@ -11,7 +11,7 @@ func TestHello(t *testing.T) {
 	})
 
 	t.Run("Saying hello to people, in spanish", func(t *testing.T) {
-		// Hello + 이름으로 응답오게 테스트를 먼저 수정한다.
+		// Hola + 이름으로 응답오게 테스트를 먼저 수정한다.
 		got := Hello("Brian", spanish)
 		want := "Hola, Brian"
 		assertCorrectMessage(t, got, want)
