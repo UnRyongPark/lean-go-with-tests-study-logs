@@ -17,6 +17,13 @@ func TestHello(t *testing.T) {
 		assertCorrectMessage(t, got, want)
 	})
 
+	t.Run("Saying hello to people, in franch", func(t *testing.T) {
+		// Bonjour + 이름으로 응답오게 테스트를 먼저 수정한다.
+		got := Hello("Brian", franch)
+		want := "Bonjour, Brian"
+		assertCorrectMessage(t, got, want)
+	})
+
 	t.Run("say 'Hello, World' when an empty string is supplied", func(t *testing.T) {
 		// 이름이 없으면 Hello, World를 출력한다.
 		got := Hello("", "")
