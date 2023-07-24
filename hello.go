@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+const english = "English"
+const spanish = "Spanish"
+
 const englishPrefix = "Hello"
 const spanishPrefix = "Hola"
 
