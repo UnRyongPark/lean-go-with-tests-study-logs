@@ -1,0 +1,11 @@
+default:
+  image: golang:1.20-alpine
+
+stages:
+  - test
+
+test-code-job1:
+  stage: test
+  script:
+    - echo "run-go-test"
+    - go test ./... -v
