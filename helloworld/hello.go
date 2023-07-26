@@ -33,7 +33,3 @@ func greetingPefix(language string) (prefix string) {
 		return englishPrefix
 	}
 }
-
-func main() {
-	fmt.Println(Hello("World", ""))
-}
