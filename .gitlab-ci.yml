@@ -22,6 +22,8 @@ code-testing-1:
     expire_in: 1 week
 
 sonarqube-check:
+  dependencies:
+    - code-testing-1
   image:
     name: noenv/sonar-scanner:latest
     entrypoint: [""]
