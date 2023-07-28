@@ -22,8 +22,10 @@ code-testing-1:
     expire_in: 1 week
 
 sonarqube-check:
-  dependencies:
-    - code-testing-1
+  artifacts:
+    paths:
+      - "./coverage.out"
+      - "./vet.out"
   image:
     name: noenv/sonar-scanner:latest
     entrypoint: [""]
