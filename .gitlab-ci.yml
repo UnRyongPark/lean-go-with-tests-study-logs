@@ -3,6 +3,7 @@ default:
 
 stages:
   - test
+  - sonar
 
 code-testing-1:
   stage: test
@@ -22,6 +23,7 @@ code-testing-1:
     expire_in: 1 week
 
 sonarqube-check:
+  stage: sonar
   image:
     name: noenv/sonar-scanner:latest
     entrypoint: [""]
