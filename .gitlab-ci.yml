@@ -33,7 +33,7 @@ sonarqube-check:
     paths:
       - .sonar/cache
   script:
-    - sonar-scanner
+    - ls -alh && sonar-scanner
   allow_failure: true
   rules:
     - if: $CI_COMMIT_BRANCH == 'develop'
