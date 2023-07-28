@@ -6,16 +6,16 @@ stages:
 
 code-testing-1:
   stage: test
-  artifacts:
-    reports:
-      coverage_report:
-        coverage_format: cobertura
-        path: coverage.xml
   script:
     - echo "run-go-test"
     - go test -xml ./... -covermode=atomic -coverpkg=./... -coverprofile=coverage.xml
     - go test -json ./... -covermode=atomic -coverpkg=./... -coverprofile=coverage.out
     - go vet ./... &> vet.out
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: ./coverage.xml
 
 sonarqube-check:
   image:
